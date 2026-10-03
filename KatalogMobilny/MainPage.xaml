@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KatalogMobilny.MainPage">
+    <!-- całość zamykamy w znaczniku grid -->
+    <Grid>
+        <!-- definijuemy ile jest wierszy i kolumn-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- zdecydujemy się na 5 wierszy -->
+            <!-- auto oznacza tyle ile musisz zeby zmieścić zawartość -->
+            <RowDefinition Height="Auto"/> 
+            <!-- * oznacza, że wiersz zajmie pozostałą dostępna przestrzeń -->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!-- zdecydjumey się na 2 kolumny identycznej szekości -->
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- po definicjach wierszy i kolumn możemy umieszczać elementy w gridzie -->
+        <!-- labelka w pierwszym wierszu i pierwszej kolumnie, zajmuje dwie kolumny -->
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Processor" FontSize="18" TextColor="#008BFF" HorizontalOptions="Center" Margin="0, 20"/>
+        <!-- obrazek analogicznie drugi wiersz, zajmie dwie kolumny -->
+        <Image Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Source="processor.png" Aspect="AspectFit"/>
+        <!-- labelka znowu na całą szerokość ale w trzecim wierszu -->
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Cena: 899 zł" FontSize="30" TextColor="Gray"/>
+        <!-- labelka z wynikiem skryptu -->
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="EtykietaWyniku" Text="Nic nie wybrano"/>
+        <!-- UWAGA: zamiast horizontalstacklayout możemy użyć grid -->
+        <Button Grid.Row="5" Grid.Column="0" Text="Pokaż" Clicked="PokazClicked"/>
+        <Button Grid.Row="5" Grid.Column="1" Text="Ukryj"/>
+        <FlexLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Wrap="Wrap" JustifyContent="Start" Padding="10">
+            <Button Text="Procesory"/>
+            <Button Text="Płyty główne"/>
+            <Button Text="Karty graficzne"/>
+            <Button Text="Dyski SSD"/>
+            <Button Text="Pamięci RAM"/>
+        </FlexLayout>
+    </Grid>
+
+    <!--
+        <VerticalStackLayout Padding="16" x:Name="MainLayout">
+            <Label Text="Procesor" FontSize="18" FlowDirection="MatchParent" TextColor="#2B4BCD"/>
+            <Image Source="processor.png" Aspect="AspectFit"/>
+            <Label Text="Prędkość: 3,6GHz" TextColor="Gray"/>
+            <Label Text="Ilość rdzeni: 5" TextColor="Gray"/>
+            <Label Text="Cena: 899zł" TextColor="Gray"/>
+
+            <Label x:Name="EtykietaWyniku" Text="Nic nie wybrano"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Pokaż" Clicked="PokazClicked"/>
+                <Button Text="Ukryj"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="jablko.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a submarine number ten" />
+
+            <Label
+                Text="Siema"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="100"/>
+
+            <Label
+                x:Name="Clicked"
+                Text="Click me"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" BackgroundColor="#FF0000" />
+        </VerticalStackLayout>
+    </ScrollView>
+    -->
+    
+</ContentPage>
