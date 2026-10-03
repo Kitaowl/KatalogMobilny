@@ -43,7 +43,6 @@
     </Grid>
 
     <!--
-    ываыва
         <VerticalStackLayout Padding="16" x:Name="MainLayout">
             <Label Text="Procesor" FontSize="18" FlowDirection="MatchParent" TextColor="#2B4BCD"/>
             <Image Source="processor.png" Aspect="AspectFit"/>
