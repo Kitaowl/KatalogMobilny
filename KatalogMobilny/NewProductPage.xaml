@@ -5,19 +5,19 @@
              Title="NewProductPage">
 
     <Grid RowDefinitions="*,Auto">
-        
+
         <VerticalStackLayout Grid.Row="0" Padding="16" Spacing="12">
             <Label
             Text="Nowy produkt"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
             <Label Text="Nazwa"/>
-            
+
             <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44"/>
             <Label Text="Cena"/>
             <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
             <Label Text="Kategoria"/>
-            
+
             <Picker x:Name="KategoriaPicker" HeightRequest="44">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -36,6 +36,17 @@
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
-        <Button Grid.Row="1" Text="Dodaj produkty" HeightRequest="52" Margin="16"/>
+        <VerticalStackLayout Grid.Row="1" Margin="16" Spacing="8">
+            <Button Text="Dodaj produkty"
+                HeightRequest="52"
+                Clicked="DodajProdukty_Clicked"/>
+
+            <Button Text="Resetuj produkty"
+                HeightRequest="52"
+                Clicked="ResetujProdukty_Clicked"/>
+
+            <Label x:Name="KliknietoLabel"
+                Text="Kliknięto 0 razy"/>
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>
