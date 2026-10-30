@@ -20,4 +20,21 @@ public partial class NewProductPage : ContentPage
         licznik = 0;
         KliknietoLabel.Text = "Kliknięto 0 razy";
     }
+
+    private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
+    {
+        if (e.Value)
+        {
+            KliknietoPrzelacznik.Text = "Produkt niedostępny";
+        }
+        else
+        {
+            KliknietoPrzelacznik.Text = "Produkt dostępny";
+        }
+    }
+
+    private void EtykietaWyniku(object sender, ToggledEventArgs e)
+    {
+
+    }
 }
