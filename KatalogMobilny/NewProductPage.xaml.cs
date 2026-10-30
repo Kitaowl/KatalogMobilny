@@ -33,8 +33,8 @@ public partial class NewProductPage : ContentPage
         }
     }
 
-    private void EtykietaWyniku(object sender, ToggledEventArgs e)
-    {
+    //private void EtykietaWyniku(object sender, ToggledEventArgs e)
+    //{
 
-    }
+    //}
 }
