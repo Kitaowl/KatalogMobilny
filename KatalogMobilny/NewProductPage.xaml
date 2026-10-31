@@ -13,12 +13,13 @@
             HorizontalOptions="Center" />
             <Label Text="Nazwa"/>
 
-            <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44"/>
+            <!--<Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44"/>-->
+            <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44" TextChanged="NazwaEntry_TextChanged"/>
             <Label Text="Cena"/>
             <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
             <Label Text="Kategoria"/>
 
-            <Picker x:Name="KategoriaPicker" HeightRequest="44">
+            <Picker x:Name="KategoriaPicker" HeightRequest="44" SelectedIndexChanged="KategoriaPicker_SelectedIndexChanged">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Procesory</x:String>

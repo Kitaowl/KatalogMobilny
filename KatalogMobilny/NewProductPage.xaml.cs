@@ -33,8 +33,21 @@ public partial class NewProductPage : ContentPage
         }
     }
 
-    private void EtykietaWyniku(object sender, ToggledEventArgs e)
+    private void KategoriaPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
+        var picker = (Picker)sender;
+        if (picker.SelectedItem != null)
+        {
+            // Берем выбранную категорию и подставляем в текст
+            string wybranaKategoria = picker.SelectedItem.ToString();
+            EtykietaWyniku.Text = $"Kategoria: {wybranaKategoria}";
+        }
+    }
 
+    private void NazwaEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        int dlugosc = e.NewTextValue?.Length ?? 0;
+
+        EtykietaWyniku.Text = $"Nazwa ma {dlugosc} znaków";
     }
 }
