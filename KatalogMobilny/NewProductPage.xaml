@@ -13,7 +13,6 @@
             HorizontalOptions="Center" />
             <Label Text="Nazwa"/>
 
-            <!--<Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44"/>-->
             <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44" TextChanged="NazwaEntry_TextChanged"/>
             <Label Text="Cena"/>
             <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
@@ -50,7 +49,7 @@
                 Text="Kliknięto 0 razy"/>
 
             <Label x:Name="EtykietaWyniku"
-                Text="Nazwa ma * znaków"/>
+                Text="Nazwa ma 0 znaków"/>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>
