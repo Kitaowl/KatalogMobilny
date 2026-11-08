@@ -16,6 +16,8 @@
             <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44" TextChanged="NazwaEntry_TextChanged"/>
             <Label Text="Cena"/>
             <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
+            <Label Text="Ilość"/>
+            <Entry x:Name="IloscEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
             <Label Text="Kategoria"/>
 
             <Picker x:Name="KategoriaPicker" HeightRequest="44" SelectedIndexChanged="KategoriaPicker_SelectedIndexChanged">
@@ -39,7 +41,7 @@
         <VerticalStackLayout Grid.Row="1" Margin="16" Spacing="8">
             <Button Text="Dodaj produkty"
                 HeightRequest="52"
-                Clicked="DodajProdukty_Clicked"/>
+                Clicked="NowyProdukt_Clicked"/>
 
             <Button Text="Resetuj produkty"
                 HeightRequest="52"
