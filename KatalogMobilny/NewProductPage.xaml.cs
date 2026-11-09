@@ -84,4 +84,37 @@ public partial class NewProductPage : ContentPage
             EtykietaWyniku.Text = $"Kategoria: {wybranaKategoria}";
         }
     }
+
+    private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        //jeśli chcielibyście wiedzieć który elemenent wysłał zdarzenie
+        Entry s = (Entry)sender;
+        if (double.TryParse(s.Text, out double wartosc))
+        {
+            //nie wiem czy to cena czy ilość ale sprawdzę czy jest ujemna
+            if(wartosc < 0)
+            {
+                //jeżeli jest ujemna to podświetla na czerwono
+                s.BackgroundColor = Colors.Red;
+                return;
+            }
+            else
+            {
+                //jeżeli jest dodatnia to podświetla na zielono
+                s.BackgroundColor = Colors.Green;
+            }
+        }
+
+        if (!double.TryParse(CenaEntry.Text, out double cena))
+        {
+            EtykietaWartosc.Text = $"Niepoprawna cena!";
+            return;
+        }
+        if(!int.TryParse(IloscEntry.Text, out int ilosc))
+        {
+            EtykietaWyniku.Text = $"Niepoprawna ilość!";
+            return;
+        }
+        EtykietaWyniku.Text = $"Wartość produktu: {cena * ilosc}";
+    }
 }

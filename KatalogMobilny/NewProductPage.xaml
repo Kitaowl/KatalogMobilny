@@ -36,6 +36,7 @@
                 <Switch x:Name="AvailableSwitch" Toggled="AvailableSwitch_Toggled"/>
                 <Label x:Name="KliknietoPrzelacznik" Text="Produkt dostępny" VerticalOptions="Center"/>
             </HorizontalStackLayout>
+            
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Margin="16" Spacing="8">
@@ -49,6 +50,9 @@
 
             <Label x:Name="EtykietaWyniku"
                 Text="Nazwa ma 0 znaków"/>
+
+            <Label x:Name="EtykietaWartosc"
+                Text="Wartość produktu: 0"/>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>
