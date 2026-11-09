@@ -45,16 +45,10 @@ public partial class NewProductPage : ContentPage
             $"kategoria: {KategoriaPicker.SelectedItem}, wartość: {wartosc}";
     }
 
-    //private void DodajProdukty_Clicked(object sender, EventArgs e)
-    //{
-    //    licznik++;
-    //    KliknietoLabel.Text = $"Kliknięto {licznik} razy";
-    //}
-
     private void ResetujProdukty_Clicked(object sender, EventArgs e)
     {
         licznik = 0;
-        KliknietoLabel.Text = "Kliknięto 0 razy";
+        EtykietaWyniku.Text = $"Kategoria: {KategoriaPicker.SelectedItem}";
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
@@ -83,5 +77,41 @@ public partial class NewProductPage : ContentPage
             string wybranaKategoria = picker.SelectedItem?.ToString() ?? string.Empty;
             EtykietaWyniku.Text = $"Kategoria: {wybranaKategoria}";
         }
+    }
+
+    private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Jeśli chcielibyście wiedzieć, który element wysłał zdarzenie
+        Entry s = (Entry)sender;
+
+        // Исправленная логика проверки на отрицательные числа и подсветку фона
+        if (double.TryParse(s.Text, out double wartoscPola))
+        {
+            if (wartoscPola < 0)
+            {
+                s.BackgroundColor = Colors.Red;
+            }
+            else
+            {
+                s.BackgroundColor = Colors.Green;
+            }
+        }
+        else
+        {
+            s.BackgroundColor = Colors.Transparent;
+        }
+
+        if (!double.TryParse(CenaEntry.Text, out double cena))
+        {
+            EtykietaWartosc.Text = "Niepoprawna cena!";
+            return;
+        }
+        if (!int.TryParse(IloscEntry.Text, out int ilosc))
+        {
+            EtykietaWartosc.Text = "Niepoprawna ilość!";
+            return;
+        }
+
+        EtykietaWartosc.Text = $"Wartość produktu: {cena * ilosc}";
     }
 }
