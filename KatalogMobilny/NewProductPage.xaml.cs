@@ -81,10 +81,9 @@ public partial class NewProductPage : ContentPage
 
     private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
-        // Jeśli chcielibyście wiedzieć, który element wysłał zdarzenie
+
         Entry s = (Entry)sender;
 
-        // Исправленная логика проверки на отрицательные числа и подсветку фона
         if (double.TryParse(s.Text, out double wartoscPola))
         {
             if (wartoscPola < 0)
