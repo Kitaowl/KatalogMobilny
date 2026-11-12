@@ -11,13 +11,16 @@
             Text="Nowy produkt"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
-            <Label Text="Nazwa"/>
 
+            <Label Text="Nazwa"/>
             <Entry x:Name="NazwaEntry" Placeholder="Wpisz nazwę produktu" HeightRequest="44" TextChanged="NazwaEntry_TextChanged"/>
+
             <Label Text="Cena"/>
-            <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
+            <Entry x:Name="CenaEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44" TextChanged="CenaEntry_TextChanged"/>
+
             <Label Text="Ilość"/>
-            <Entry x:Name="IloscEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44"/>
+            <Entry x:Name="IloscEntry" Placeholder="0" Keyboard="Numeric" HeightRequest="44" TextChanged="CenaEntry_TextChanged"/>
+
             <Label Text="Kategoria"/>
 
             <Picker x:Name="KategoriaPicker" HeightRequest="44" SelectedIndexChanged="KategoriaPicker_SelectedIndexChanged">
@@ -28,7 +31,7 @@
                         <x:String>Karty graficzne</x:String>
                         <x:String>Dyski SSD</x:String>
                         <x:String>Pamięci RAM</x:String>
-                    </x:Array>  
+                    </x:Array>
                 </Picker.ItemsSource>
             </Picker>
 
@@ -36,7 +39,7 @@
                 <Switch x:Name="AvailableSwitch" Toggled="AvailableSwitch_Toggled"/>
                 <Label x:Name="KliknietoPrzelacznik" Text="Produkt dostępny" VerticalOptions="Center"/>
             </HorizontalStackLayout>
-            
+
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Margin="16" Spacing="8">

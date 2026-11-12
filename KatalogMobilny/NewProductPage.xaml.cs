@@ -45,16 +45,10 @@ public partial class NewProductPage : ContentPage
             $"kategoria: {KategoriaPicker.SelectedItem}, wartość: {wartosc}";
     }
 
-    //private void DodajProdukty_Clicked(object sender, EventArgs e)
-    //{
-    //    licznik++;
-    //    KliknietoLabel.Text = $"Kliknięto {licznik} razy";
-    //}
-
     private void ResetujProdukty_Clicked(object sender, EventArgs e)
     {
         licznik = 0;
-        EtykietaWyniku.Text = $"Kategoria: {KategoriaPicker.SelectedItem}";
+        EtykietaWyniku.Text = "Kliknięto 0 razy";
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
@@ -87,34 +81,36 @@ public partial class NewProductPage : ContentPage
 
     private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
-        //jeśli chcielibyście wiedzieć który elemenent wysłał zdarzenie
+
         Entry s = (Entry)sender;
-        if (double.TryParse(s.Text, out double wartosc))
+
+        if (double.TryParse(s.Text, out double wartoscPola))
         {
-            //nie wiem czy to cena czy ilość ale sprawdzę czy jest ujemna
-            if(wartosc < 0)
+            if (wartoscPola < 0)
             {
-                //jeżeli jest ujemna to podświetla na czerwono
                 s.BackgroundColor = Colors.Red;
-                return;
             }
             else
             {
-                //jeżeli jest dodatnia to podświetla na zielono
                 s.BackgroundColor = Colors.Green;
             }
+        }
+        else
+        {
+            s.BackgroundColor = Colors.Transparent;
         }
 
         if (!double.TryParse(CenaEntry.Text, out double cena))
         {
-            EtykietaWartosc.Text = $"Niepoprawna cena!";
+            EtykietaWartosc.Text = "Niepoprawna cena!";
             return;
         }
-        if(!int.TryParse(IloscEntry.Text, out int ilosc))
+        if (!int.TryParse(IloscEntry.Text, out int ilosc))
         {
-            EtykietaWyniku.Text = $"Niepoprawna ilość!";
+            EtykietaWartosc.Text = "Niepoprawna ilość!";
             return;
         }
-        EtykietaWyniku.Text = $"Wartość produktu: {cena * ilosc}";
+
+        EtykietaWartosc.Text = $"Wartość produktu: {cena * ilosc}";
     }
 }
