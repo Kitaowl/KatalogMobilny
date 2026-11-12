@@ -47,8 +47,15 @@ public partial class NewProductPage : ContentPage
 
     private void ResetujProdukty_Clicked(object sender, EventArgs e)
     {
-        licznik = 0;
-        EtykietaWyniku.Text = $"Kategoria: {KategoriaPicker.SelectedItem}";
+        NazwaEntry.Text = string.Empty;
+        CenaEntry.Text = string.Empty;
+        IloscEntry.Text = string.Empty;
+        KategoriaPicker.SelectedItem = null;
+        AvailableSwitch.IsToggled = false;
+        CenaEntry.BackgroundColor = Colors.Transparent;
+        IloscEntry.BackgroundColor = Colors.Transparent;
+        EtykietaWyniku.Text = "Formularz został zresetowany";
+        EtykietaWartosc.Text = "Wartość produktu: 0";
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
@@ -81,10 +88,9 @@ public partial class NewProductPage : ContentPage
 
     private void CenaEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
-        // Jeśli chcielibyście wiedzieć, który element wysłał zdarzenie
+
         Entry s = (Entry)sender;
 
-        // Исправленная логика проверки на отрицательные числа и подсветку фона
         if (double.TryParse(s.Text, out double wartoscPola))
         {
             if (wartoscPola < 0)

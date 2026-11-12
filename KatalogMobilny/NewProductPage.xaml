@@ -4,9 +4,9 @@
              x:Class="KatalogMobilny.NewProductPage"
              Title="NewProductPage">
 
-    <Grid RowDefinitions="*,Auto">
+    <Grid RowDefinitions="*,Auto" RowSpacing="12" Padding="16">
 
-        <VerticalStackLayout Grid.Row="0" Padding="16" Spacing="12">
+        <VerticalStackLayout Grid.Row="0" Spacing="12">
             <Label
             Text="Nowy produkt"
             VerticalOptions="Center"
@@ -42,7 +42,7 @@
 
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Margin="16" Spacing="8">
+        <VerticalStackLayout Grid.Row="1" Spacing="8">
             <Button Text="Dodaj produkty"
                 HeightRequest="52"
                 Clicked="NowyProdukt_Clicked"/>
