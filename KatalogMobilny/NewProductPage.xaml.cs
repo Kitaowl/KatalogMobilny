@@ -6,6 +6,7 @@ public partial class NewProductPage : ContentPage
 
     public NewProductPage()
     {
+        Produkt p = new Produkt("Procesor Intel", 999.99, "Elektronika", 10);
         InitializeComponent();
     }
 
@@ -47,8 +48,15 @@ public partial class NewProductPage : ContentPage
 
     private void ResetujProdukty_Clicked(object sender, EventArgs e)
     {
-        licznik = 0;
-        EtykietaWyniku.Text = "Kliknięto 0 razy";
+        NazwaEntry.Text = string.Empty;
+        CenaEntry.Text = string.Empty;
+        IloscEntry.Text = string.Empty;
+        KategoriaPicker.SelectedItem = null;
+        AvailableSwitch.IsToggled = false;
+        CenaEntry.BackgroundColor = Colors.Transparent;
+        IloscEntry.BackgroundColor = Colors.Transparent;
+        EtykietaWyniku.Text = "Formularz został zresetowany";
+        EtykietaWartosc.Text = "Wartość produktu: 0";
     }
 
     private void AvailableSwitch_Toggled(object sender, ToggledEventArgs e)
