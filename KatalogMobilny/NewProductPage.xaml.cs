@@ -8,7 +8,7 @@ public partial class NewProductPage : ContentPage
     {
         InitializeComponent();
     }
-
+    //testtest
     private void NowyProdukt_Clicked(object sender, EventArgs e)
     {
         if (!double.TryParse(CenaEntry.Text, out double cena))
