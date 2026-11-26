@@ -8,7 +8,7 @@
     <!--tu zmieniamy sobie strone na inna dopoki nie mamy nawigacji-->
     <ShellContent
         Title="KatalogMobilny"
-        ContentTemplate="{DataTemplate local:NewProductPage}" 
+        ContentTemplate="{DataTemplate local:ProductListPage}" 
         Route="MainPage" />
 
 </Shell>

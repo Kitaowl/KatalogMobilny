@@ -71,11 +71,11 @@ namespace KatalogMobilny
             Console.WriteLine($"Nazwa: {Nazwa,-15}| Cena: {Cena,10:f2} zł | " +
                 $"Kategoria: {Kategoria} | Ilość: {Ilosc,5} | Wartość magazynu: {WartoscMagazynu,10:f2} zł");
         }
-        public override string ToString()
-        {
-            return $"Nazwa: {Nazwa,-15}| Cena: {Cena,10:f2} zł | " +
-                $"Kategoria: {Kategoria} | Ilość: {Ilosc,5} | Wartość magazynu: {WartoscMagazynu,10:f2} zł";
-        }
+        //public override string ToString()
+        //{
+        //    return $"Nazwa: {Nazwa,-15}| Cena: {Cena,10:f2} zł | " +
+        //        $"Kategoria: {Kategoria} | Ilość: {Ilosc,5} | Wartość magazynu: {WartoscMagazynu,10:f2} zł";
+        //}
         public static double ObliczWartoscMagazynu(Produkt[] produkty)
         {
             double suma = 0; // pusty licznik na sume

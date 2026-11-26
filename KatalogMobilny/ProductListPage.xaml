@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KatalogMobilny.ProductListPage"
              Title="ProductListPage">
+    <Grid RowSpacing="8" Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- kolumn nie definiujemy bo bedzie tylko jedna -->
+        <CollectionView Grid.Row="1" x:Name="ProductCollectionView" 
+                        SelectionMode="Single"
+                        SelectionChanged="ProductSelected">
+            <!-- jeśli lista jest pusta: -->
+            <CollectionView.EmptyView>
+                <Label Text="Brak produktów do wyświetlenia" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" />
+            </CollectionView.EmptyView>
+        </CollectionView>
+        <Label Grid.Row="2" x:Name="ProductCountLabel" Text="Produktów: 0" />
+        <Label Grid.Row="0" Text="Katalog produktów" 
+               FontSize="Large" FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+    </Grid>
+    <!--
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
+    -->
 </ContentPage>
