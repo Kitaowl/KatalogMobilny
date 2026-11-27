@@ -32,6 +32,5 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
-    '
     -->
 </ContentPage>
